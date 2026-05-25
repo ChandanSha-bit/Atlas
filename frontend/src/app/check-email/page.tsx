@@ -28,9 +28,9 @@ export default function CheckEmail() {
           <h1 className="font-headline-sm text-headline-sm text-primary">Atlas</h1>
         </div>
         
-        <div className="bg-white/60 backdrop-blur-[20px] rounded-[1.5rem] border border-white/40 shadow-[0_30px_60px_rgba(27,48,34,0.08)] p-8 md:p-10 flex flex-col items-center text-center">
+        <div className="bg-background/60 backdrop-blur-[20px] rounded-[1.5rem] border border-border/40 shadow-[0_30px_60px_rgba(27,48,34,0.08)] p-8 md:p-10 flex flex-col items-center text-center">
           {/* Icon */}
-          <div className="w-16 h-16 rounded-full bg-secondary-fixed/50 flex items-center justify-center mb-6 border border-white/50">
+          <div className="w-16 h-16 rounded-full bg-secondary-fixed/50 flex items-center justify-center mb-6 border border-border/50">
             <span className="material-symbols-outlined text-[32px] text-primary" style={{ fontVariationSettings: "'FILL' 0" }}>mark_email_unread</span>
           </div>
           

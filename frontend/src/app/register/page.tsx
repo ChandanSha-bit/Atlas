@@ -27,7 +27,7 @@ export default function Register() {
       const res = await api.post("/auth/register", { name, email, password });
       const { user, token } = res.data;
       setAuth(user, token);
-      toast.success(`Protocol initiated! Welcome, ${user.name}`);
+      toast.success("Account created! Check your email to verify.", { duration: 6000 });
       router.push("/chat");
     } catch (error: any) {
       const message = error.response?.data?.message || "Protocol Initiation Failed.";
@@ -65,7 +65,11 @@ export default function Register() {
       </div>
 
       <main className="relative z-10 w-full max-w-md px-margin-mobile md:px-0">
-        <div className="bg-white/60 backdrop-blur-[20px] border border-white/20 rounded-xl p-8 shadow-[0_10px_40px_-10px_rgba(27,48,34,0.08)]">
+        <div className="bg-background/60 backdrop-blur-[20px] border border-border/20 rounded-xl p-8 shadow-[0_10px_40px_-10px_rgba(27,48,34,0.08)]">
+          <Link href="/" className="inline-flex items-center gap-1 text-[11px] text-on-surface-variant/50 hover:text-foreground transition-colors mb-6 font-medium">
+            <span className="material-symbols-outlined text-[16px]">arrow_back</span>
+            Back to Atlas
+          </Link>
           <h1 className="font-headline-md text-headline-md text-primary text-center mb-3">Register</h1>
           <p className="font-body-md text-body-md text-on-surface-variant text-center mb-8 px-2">
             Create your Neural ID.
@@ -76,16 +80,16 @@ export default function Register() {
             <div className="grid grid-cols-2 gap-4">
               <button 
                 onClick={() => handleOAuth("Google")}
-                className="flex items-center justify-center gap-3 py-2.5 px-4 bg-white/40 border border-white/60 rounded-lg hover:bg-white/60 transition-all active:scale-95 shadow-sm"
+                className="flex items-center justify-center gap-3 py-2.5 px-4 bg-background/40 border border-border/60 rounded-lg hover:bg-background/60 transition-all active:scale-95 shadow-sm"
               >
                 <FcGoogle className="text-xl" />
                 <span className="font-label-md text-label-md text-on-surface font-medium">Google</span>
               </button>
               <button 
                 onClick={() => handleOAuth("GitHub")}
-                className="flex items-center justify-center gap-3 py-2.5 px-4 bg-white/40 border border-white/60 rounded-lg hover:bg-white/60 transition-all active:scale-95 shadow-sm"
+                className="flex items-center justify-center gap-3 py-2.5 px-4 bg-background/40 border border-border/60 rounded-lg hover:bg-background/60 transition-all active:scale-95 shadow-sm"
               >
-                <FaGithub className="text-xl text-[#1b1c1a]" />
+                <FaGithub className="text-xl text-foreground" />
                 <span className="font-label-md text-label-md text-on-surface font-medium">GitHub</span>
               </button>
             </div>
@@ -154,7 +158,7 @@ export default function Register() {
             
             <button 
               disabled={loading}
-              className="w-full flex items-center justify-center py-3.5 px-4 bg-primary-container text-white rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary transition-all active:scale-[0.98] border-t border-white/10 disabled:opacity-50 mt-4 font-bold uppercase tracking-[0.1em]" 
+              className="w-full flex items-center justify-center py-3.5 px-4 bg-primary-container text-white rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary transition-all active:scale-[0.98] border-t border-border/10 disabled:opacity-50 mt-4 font-bold uppercase tracking-[0.1em]" 
               type="submit"
             >
               {loading ? "Initializing..." : "Initialize Synthesis"}

@@ -89,7 +89,7 @@ function NewPasswordContent() {
           <div className="font-headline-sm text-headline-sm text-primary font-medium tracking-tight">Atlas</div>
         </div>
         
-        <div className="bg-white/60 backdrop-blur-[20px] border border-white/20 rounded-xl p-8 shadow-[0_10px_40px_-10px_rgba(27,48,34,0.08)] text-center">
+        <div className="bg-background/60 backdrop-blur-[20px] border border-border/20 rounded-xl p-8 shadow-[0_10px_40px_-10px_rgba(27,48,34,0.08)] text-center">
           <h1 className="font-headline-md text-headline-md text-primary mb-3">Create New Password</h1>
           <p className="font-body-md text-body-md text-on-surface-variant mb-8 px-2">
             Your new password must be different from previously used passwords.
@@ -158,7 +158,7 @@ function NewPasswordContent() {
             <div className="pt-2">
               <button 
                 disabled={loading}
-                className="w-full flex items-center justify-center py-3 px-4 bg-primary-container text-white rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary-container/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-container transition-all active:scale-[0.98] border-t border-white/10 disabled:opacity-50" 
+                className="w-full flex items-center justify-center py-3 px-4 bg-primary-container text-background rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary-container/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-container transition-all active:scale-[0.98] border-t border-border/10 disabled:opacity-50" 
                 type="submit"
               >
                 {loading ? "Resetting..." : "Reset Password"}
@@ -182,12 +182,12 @@ function NewPasswordContent() {
 export default function NewPassword() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen flex items-center justify-center bg-[#fbf9f6]">
+      <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center">
-          <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[#1b1c1a] flex items-center justify-center">
-            <span className="material-symbols-outlined text-white text-3xl">eco</span>
+          <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-foreground flex items-center justify-center">
+            <span className="material-symbols-outlined text-background text-3xl">eco</span>
           </div>
-          <h2 className="text-xl font-medium text-[#1b1c1a] mb-2">Loading...</h2>
+          <h2 className="text-xl font-medium text-foreground mb-2">Loading...</h2>
         </div>
       </div>
     }>

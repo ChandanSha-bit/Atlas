@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "shadcn/tailwind.css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -232,6 +232,25 @@
   --border: #434843;
   --input: #434843;
   --ring: #b4cdb8;
+}
+
+.dark .glass-panel {
+  background: rgba(27, 28, 26, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(251, 249, 246, 0.15);
+}
+
+.dark *:hover::-webkit-scrollbar-thumb {
+  background: rgba(251, 249, 246, 0.25);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(251, 249, 246, 0.4) !important;
 }
 
 @layer base {

@@ -14,6 +14,11 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+
+  // Unverified email state
+  const [needsVerification, setNeedsVerification] = useState(false);
+  const [unverifiedEmail, setUnverifiedEmail] = useState("");
+  const [resending, setResending] = useState(false);
   
   const router = useRouter();
   const setAuth = useAuthStore((state) => state.setAuth);
@@ -21,6 +26,7 @@ export default function Login() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setNeedsVerification(false);
 
     try {
       const res = await api.post("/auth/login", { email, password });
@@ -29,10 +35,28 @@ export default function Login() {
       toast.success(`Welcome back, ${user.name}`);
       router.push("/chat");
     } catch (error: any) {
-      const message = error.response?.data?.message || "Synthesis Failed. Check credentials.";
-      toast.error(message);
+      const data = error.response?.data;
+      if (data?.needsVerification) {
+        setNeedsVerification(true);
+        setUnverifiedEmail(data.email || email);
+      } else {
+        const message = data?.message || "Synthesis Failed. Check credentials.";
+        toast.error(message);
+      }
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleResendVerification = async () => {
+    setResending(true);
+    try {
+      await api.post("/auth/resend-verification", { email: unverifiedEmail });
+      toast.success("Verification email resent! Check your inbox.");
+    } catch {
+      toast.error("Failed to resend verification email");
+    } finally {
+      setResending(false);
     }
   };
 
@@ -64,7 +88,11 @@ export default function Login() {
       </div>
 
       <main className="relative z-10 w-full max-w-md px-margin-mobile md:px-0">
-        <div className="bg-white/60 backdrop-blur-[20px] border border-white/20 rounded-xl p-8 shadow-[0_10px_40px_-10px_rgba(27,48,34,0.08)]">
+        <div className="bg-background/60 backdrop-blur-[20px] border border-border/20 rounded-xl p-8 shadow-[0_10px_40px_-10px_rgba(27,48,34,0.08)]">
+          <Link href="/" className="inline-flex items-center gap-1 text-[11px] text-on-surface-variant/50 hover:text-foreground transition-colors mb-6 font-medium">
+            <span className="material-symbols-outlined text-[16px]">arrow_back</span>
+            Back to Atlas
+          </Link>
           <h1 className="font-headline-md text-headline-md text-primary text-center mb-3">Login</h1>
           <p className="font-body-md text-body-md text-on-surface-variant text-center mb-8 px-2">
             Access the Atlas Terminal.
@@ -75,16 +103,16 @@ export default function Login() {
             <div className="grid grid-cols-2 gap-4">
               <button 
                 onClick={() => handleOAuth("Google")}
-                className="flex items-center justify-center gap-3 py-2.5 px-4 bg-white/40 border border-white/60 rounded-lg hover:bg-white/60 transition-all active:scale-95 shadow-sm"
+                className="flex items-center justify-center gap-3 py-2.5 px-4 bg-background/40 border border-border/60 rounded-lg hover:bg-background/60 transition-all active:scale-95 shadow-sm"
               >
                 <FcGoogle className="text-xl" />
                 <span className="font-label-md text-label-md text-on-surface font-medium">Google</span>
               </button>
               <button 
                 onClick={() => handleOAuth("GitHub")}
-                className="flex items-center justify-center gap-3 py-2.5 px-4 bg-white/40 border border-white/60 rounded-lg hover:bg-white/60 transition-all active:scale-95 shadow-sm"
+                className="flex items-center justify-center gap-3 py-2.5 px-4 bg-background/40 border border-border/60 rounded-lg hover:bg-background/60 transition-all active:scale-95 shadow-sm"
               >
-                <FaGithub className="text-xl text-[#1b1c1a]" />
+                <FaGithub className="text-xl text-foreground" />
                 <span className="font-label-md text-label-md text-on-surface font-medium">GitHub</span>
               </button>
             </div>
@@ -135,10 +163,26 @@ export default function Login() {
                 />
               </div>
             </div>
+
+            {needsVerification && (
+              <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-center">
+                <span className="material-symbols-outlined text-amber-600 text-[20px] block mb-1">mail_outline</span>
+                <p className="text-[12px] text-amber-800 font-medium mb-2">Email not verified yet.</p>
+                <p className="text-[11px] text-amber-700/70 mb-3">Check your inbox for the verification link.</p>
+                <button
+                  type="button"
+                  onClick={handleResendVerification}
+                  disabled={resending}
+                  className="text-[11px] font-bold text-amber-700 underline hover:text-amber-900 transition-colors disabled:opacity-50"
+                >
+                  {resending ? "Sending..." : "Resend verification email"}
+                </button>
+              </div>
+            )}
             
             <button 
               disabled={loading}
-              className="w-full flex items-center justify-center py-3.5 px-4 bg-primary-container text-white rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary transition-all active:scale-[0.98] border-t border-white/10 disabled:opacity-50 font-bold uppercase tracking-[0.1em]" 
+              className="w-full flex items-center justify-center py-3.5 px-4 bg-primary-container text-white rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary transition-all active:scale-[0.98] border-t border-border/10 disabled:opacity-50 font-bold uppercase tracking-[0.1em]" 
               type="submit"
             >
               {loading ? "Processing..." : "Login to Terminal"}

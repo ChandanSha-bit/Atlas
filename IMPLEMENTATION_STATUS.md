@@ -1,6 +1,6 @@
 # Atlas Implementation Status
 
-Last Updated: Current Session
+Last Updated: May 21, 2026
 
 ---
 
@@ -37,6 +37,7 @@ Last Updated: Current Session
 - ✅ Token generation with 10-minute expiry
 - ✅ Secure token hashing (SHA256)
 - ✅ Beautiful HTML email template
+- ⚠️ Email sending configured for Gmail SMTP (App Password) — pending file write
 
 **Frontend:**
 - ✅ Reset password request page (`/reset-password`)
@@ -52,104 +53,182 @@ Last Updated: Current Session
 
 ---
 
+### 3. Chat Page — Full Implementation ✅
+**Status**: Fully Implemented
+
+**Features:**
+- ✅ Real-time AI response generation (Groq Llama 3 70B)
+- ✅ Send message with optimistic UI update
+- ✅ Auto-scroll to latest message
+- ✅ Chat history sidebar with all conversations
+- ✅ Load specific conversation by ID
+- ✅ Delete conversation with ownership check
+- ✅ Rename conversation inline
+- ✅ New chat button
+- ✅ Suggestion cards for empty state
+- ✅ Loading indicator (typing dots animation)
+- ✅ Error handling with toast notifications
+- ✅ Keyboard shortcut (Enter to send, Shift+Enter for newline)
+- ✅ Mobile responsive sidebar drawer
+- ✅ Mobile header with hamburger menu
+- ✅ Responsive chat bubbles
+
+---
+
+### 4. Settings Page — Full Implementation ✅
+**Status**: Fully Implemented
+
+**Features:**
+- ✅ Profile tab with controlled form inputs
+- ✅ Profile update API integration (`PUT /api/user/update-details`)
+- ✅ Avatar upload with file picker + Cloudinary
+- ✅ Avatar remove functionality
+- ✅ Password change form with validation
+- ✅ Password update API integration (`PUT /api/user/update-password`)
+- ✅ Account deletion with confirmation dialog
+- ✅ Delete API integration (`DELETE /api/user/delete-account`)
+- ✅ Sign out button with Zustand logout
+- ✅ Theme selection (Light/Dark/System)
+- ✅ Dark mode toggle with localStorage persistence
+- ✅ Notifications tab with toggle controls (email, marketing, security alerts)
+
+---
+
+### 5. Image Generation ✅
+**Status**: Fully Implemented
+
+**Backend:**
+- ✅ OpenAI DALL-E 3 integration with Cloudinary storage
+- ✅ DALL-E 2 fallback when DALL-E 3 unavailable
+- ✅ Image generation endpoint (`POST /api/images/generate`)
+- ✅ Image history endpoint (`GET /api/images/history`)
+- ✅ Energy deduction for free tier (-10 per image)
+
+**Frontend:**
+- ✅ Image generation modal with prompt input
+- ✅ Loading state with preview during generation
+- ✅ Display generated images in chat (image message type)
+- ✅ Download button on chat image messages
+- ✅ Gallery page (`/gallery`) with masonry grid
+- ✅ Lightbox viewer with full metadata
+- ✅ Gallery link in chat sidebar
+
+---
+
+### 6. Image Gallery ✅
+**Status**: Fully Implemented
+
+- ✅ Backend `GET /api/images/history` — aggregates all user images across chats
+- ✅ Frontend gallery page at `/gallery`
+- ✅ Responsive 2-4 column masonry grid
+- ✅ Hover overlays with download/expand
+- ✅ Lightbox with high-res view, metadata, download, chat link
+- ✅ Empty state with CTA
+- ✅ Refresh button
+- ✅ Download button on chat image messages
+
+---
+
+### 7. Email Configuration — Gmail SMTP
+**Status**: ⏳ Pending file write (config ready to apply)
+
+- ✅ `EMAIL_HOST=smtp.gmail.com`
+- ✅ `EMAIL_PORT=587`
+- ✅ `EMAIL_USER=csharswat9@gmail.com`
+- ✅ `EMAIL_PASS` = App Password provided
+- ✅ `secure: false` required for port 587
+
+---
+
+### 8. User Controller
+**Status**: Fully Implemented
+
+- ✅ `PUT /api/user/update-details` — Update name, email, bio
+- ✅ `PUT /api/user/update-password` — Change password
+- ✅ `POST /api/user/upload-avatar` — Upload avatar to Cloudinary
+- ✅ `DELETE /api/user/delete-account` — Delete account + all chats
+
+---
+
 ## 🔄 IN PROGRESS
 
-None currently.
+### Email Config — Apply Changes
+**Status**: Ready to write — credentials gathered, code change planned
+- `.env` email block → Gmail SMTP
+- `sendEmail.js` → add `secure: false`
 
 ---
 
 ## ❌ PENDING FEATURES
 
-### 3. Settings Page Functionality
+### 3. Payment Integration (Razorpay Frontend)
 **Priority**: High
 **Estimated Time**: 3-4 hours
 
-**Missing:**
-- Profile update API integration (name, email, bio, avatar)
-- Password change functionality (for logged-in users)
-- Theme persistence
-- Account deletion
-- Sign out button connection
+**Backend**: ✅ Complete (order creation, verification, webhook)
+**Frontend**: ❌ Missing
+
+- [ ] Razorpay checkout popup on pricing page
+- [ ] Order creation API call
+- [ ] Payment verification flow
+- [ ] Success/failure handling
+- [ ] Subscription tier update in UI
 
 ---
 
-### 4. Payment Integration (Razorpay)
+### 4. File Attachments in Chat
 **Priority**: Medium
 **Estimated Time**: 3-4 hours
 
-**Backend**: ✅ Complete
-**Frontend**: ❌ Missing
-
-**Missing:**
-- Razorpay checkout popup on pricing page
-- Order creation API call
-- Payment verification flow
-- Success/failure handling
-- Subscription tier update in UI
+- [ ] File upload logic
+- [ ] Storage integration (Cloudinary)
+- [ ] Message type support for files
+- [ ] File preview in chat
 
 ---
 
-### 5. Image Generation UI
-**Priority**: Medium
-**Estimated Time**: 2-3 hours
-
-**Backend**: ✅ Complete (DALL-E 3 + Cloudinary)
-**Frontend**: ❌ Missing
-
-**Missing:**
-- Image generation modal/dialog
-- Prompt input UI
-- Loading state with preview
-- Display generated images in chat
-- Image history/gallery
-
----
-
-### 6. Stripe Integration
+### 5. Stripe Integration
 **Priority**: Low
 **Estimated Time**: 2-3 hours
 
-**Missing:**
-- Stripe controller
-- Stripe routes
-- Frontend checkout flow
-- Webhook handling
+- [ ] Stripe controller
+- [ ] Stripe routes
+- [ ] Frontend checkout flow
+- [ ] Webhook handling
 
 ---
 
-### 7. File Attachments in Chat
-**Priority**: Low
-**Estimated Time**: 3-4 hours
-
-**Missing:**
-- File upload logic
-- Storage integration (Cloudinary)
-- Message type support for files
-- File preview in chat
-
----
-
-### 8. Email Verification
+### 6. Email Verification
 **Priority**: Low
 **Estimated Time**: 2-3 hours
 
-**Missing:**
-- Email verification token generation
-- Verification email template
-- Verification endpoint
-- Frontend verification page
+- [ ] Email verification token generation
+- [ ] Verification email template
+- [ ] Verification endpoint
+- [ ] Frontend verification page
+
+---
+
+### 7. Energy Display in Chat Sidebar
+**Priority**: Low
+**Estimated Time**: 1-2 hours
+
+- [ ] Energy indicator in sidebar
+- [ ] Upgrade prompt when low
 
 ---
 
 ## 📋 TESTING CHECKLIST
 
-### OAuth Testing
-- [ ] Google OAuth login
-- [ ] Google OAuth registration (new user)
-- [ ] GitHub OAuth login
-- [ ] GitHub OAuth registration (new user)
-- [ ] OAuth failure handling
-- [ ] Token persistence after OAuth
+### Settings E2E Tests (20/20 ✅)
+- [x] Register user
+- [x] Login user
+- [x] Get current user
+- [x] Update profile details
+- [x] Update password
+- [x] Avatar upload endpoint
+- [x] Delete account
+- [x] Auth protection
 
 ### Password Reset Testing
 - [ ] Request password reset email
@@ -160,6 +239,13 @@ None currently.
 - [ ] Try invalid token
 - [ ] Automatic login after reset
 
+### Image Gallery Testing
+- [ ] Gallery loads with correct images
+- [ ] Lightbox opens/closes
+- [ ] Download works
+- [ ] Empty state shows when no images
+- [ ] Link from chat sidebar works
+
 ---
 
 ## 🚀 DEPLOYMENT CHECKLIST
@@ -167,16 +253,16 @@ None currently.
 ### Backend Environment Variables
 ```env
 # Required for OAuth
-GOOGLE_CLIENT_ID=
-GOOGLE_CLIENT_SECRET=
-GITHUB_CLIENT_ID=
-GITHUB_CLIENT_SECRET=
+GOOGLE_CLIENT_ID=✅ (configured)
+GOOGLE_CLIENT_SECRET=✅ (configured)
+GITHUB_CLIENT_ID=✅ (configured)
+GITHUB_CLIENT_SECRET=✅ (configured)
 
-# Required for Email
-EMAIL_HOST=
-EMAIL_PORT=
-EMAIL_USER=
-EMAIL_PASS=
+# Required for Email (currently Mailtrap → switching to Gmail)
+EMAIL_HOST=smtp.gmail.com ✅
+EMAIL_PORT=587 ✅
+EMAIL_USER=csharswat9@gmail.com ✅
+EMAIL_PASS=✅ (App Password)
 
 # Already configured
 MONGO_URI=✅
@@ -193,41 +279,9 @@ NEXT_PUBLIC_API_URL=http://localhost:5000/api
 
 ---
 
-## 📝 NOTES
-
-### OAuth Setup
-- See `backend/OAUTH_SETUP.md` for detailed OAuth configuration
-- Callback URLs must match exactly in OAuth app settings
-- Test locally before deploying to production
-
-### Password Reset
-- Reset tokens expire after 10 minutes
-- Tokens are hashed in database for security
-- Users are automatically logged in after successful reset
-
-### Email Configuration
-- Currently using Mailtrap for development
-- Switch to SendGrid/AWS SES for production
-- Update email templates in `authController.js`
-
----
-
 ## 🎯 NEXT RECOMMENDED TASKS
 
-1. **Settings Page API Integration** (High Priority)
-   - User profile updates
-   - Password change
-   - Account deletion
-
-2. **Razorpay Payment Flow** (Medium Priority)
-   - Frontend checkout integration
-   - Subscription management
-
-3. **Image Generation UI** (Medium Priority)
-   - Modal/dialog component
-   - Integration with existing backend
-
-4. **Testing & Bug Fixes** (Ongoing)
-   - Test all OAuth flows
-   - Test password reset
-   - Fix any edge cases
+1. **Apply Email Config Changes** (Now — credentials ready)
+2. **Razorpay Frontend Integration** (High Priority)
+3. **File Attachments in Chat** (Medium Priority)
+4. **✔️ Cleaned up unused code** (grok-sdk, stripe, crypto, UI components, dead files)

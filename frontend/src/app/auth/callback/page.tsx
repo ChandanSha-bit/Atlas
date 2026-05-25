@@ -45,13 +45,13 @@ function OAuthCallbackContent() {
   }, [searchParams, setAuth, router]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#fbf9f6]">
+    <div className="min-h-screen flex items-center justify-center bg-background">
       <div className="text-center">
-        <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[#1b1c1a] flex items-center justify-center animate-pulse">
-          <span className="material-symbols-outlined text-white text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>eco</span>
+        <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-foreground flex items-center justify-center animate-pulse">
+          <span className="material-symbols-outlined text-background text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>eco</span>
         </div>
-        <h2 className="text-xl font-medium text-[#1b1c1a] mb-2">Authenticating...</h2>
-        <p className="text-sm text-[#1b1c1a]/50">Please wait while we verify your identity.</p>
+        <h2 className="text-xl font-medium text-foreground mb-2">Authenticating...</h2>
+        <p className="text-sm text-foreground/50">Please wait while we verify your identity.</p>
       </div>
     </div>
   );
@@ -60,12 +60,12 @@ function OAuthCallbackContent() {
 export default function OAuthCallbackPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen flex items-center justify-center bg-[#fbf9f6]">
+      <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center">
-          <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[#1b1c1a] flex items-center justify-center">
-            <span className="material-symbols-outlined text-white text-3xl">eco</span>
+          <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-foreground flex items-center justify-center">
+            <span className="material-symbols-outlined text-background text-3xl">eco</span>
           </div>
-          <h2 className="text-xl font-medium text-[#1b1c1a] mb-2">Loading...</h2>
+          <h2 className="text-xl font-medium text-foreground mb-2">Loading...</h2>
         </div>
       </div>
     }>

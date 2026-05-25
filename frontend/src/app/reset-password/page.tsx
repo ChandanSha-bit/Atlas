@@ -55,7 +55,7 @@ export default function ResetPassword() {
           <div className="font-headline-sm text-headline-sm text-primary font-medium tracking-tight">Atlas</div>
         </div>
         
-        <div className="bg-white/60 backdrop-blur-[20px] border border-white/20 rounded-xl p-8 shadow-[0_10px_40px_-10px_rgba(27,48,34,0.08)] text-center">
+        <div className="bg-background/60 backdrop-blur-[20px] border border-border/20 rounded-xl p-8 shadow-[0_10px_40px_-10px_rgba(27,48,34,0.08)] text-center">
           {!emailSent ? (
             <>
               <h1 className="font-headline-md text-headline-md text-primary mb-3">Reset Password</h1>
@@ -87,7 +87,7 @@ export default function ResetPassword() {
                 {/* Submit Button */}
                 <button 
                   disabled={loading}
-                  className="w-full flex items-center justify-center py-3 px-4 bg-primary-container text-white rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary-container/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-container transition-all active:scale-[0.98] border-t border-white/10 disabled:opacity-50" 
+                  className="w-full flex items-center justify-center py-3 px-4 bg-primary-container text-white rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary-container/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-container transition-all active:scale-[0.98] border-t border-border/10 disabled:opacity-50" 
                   type="submit"
                 >
                   {loading ? "Sending..." : "Send Reset Link"}
@@ -96,8 +96,8 @@ export default function ResetPassword() {
             </>
           ) : (
             <>
-              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[#1b1c1a]/5 flex items-center justify-center">
-                <span className="material-symbols-outlined text-[#1b1c1a] text-4xl">mark_email_read</span>
+              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-foreground/5 flex items-center justify-center">
+                <span className="material-symbols-outlined text-foreground text-4xl">mark_email_read</span>
               </div>
               <h1 className="font-headline-md text-headline-md text-primary mb-3">Check Your Email</h1>
               <p className="font-body-md text-body-md text-on-surface-variant mb-8 px-2">
