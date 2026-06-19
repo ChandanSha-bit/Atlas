@@ -21,7 +21,7 @@ app.use(requestId);
 
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://atlas-swart-eight.vercel.app',
+  'https://Atlas-swart-eight.vercel.app',
   ...(process.env.FRONTEND_URL ? [process.env.FRONTEND_URL] : [])
 ];
 

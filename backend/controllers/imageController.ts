@@ -63,7 +63,7 @@ export const generateImage = async (req: Request, res: Response) => {
     const tempImageUrl = response.data![0].url!;
 
     const uploadResponse = await cloudinary.uploader.upload(tempImageUrl, {
-      folder: 'Axiora_ai_generations',
+      folder: 'Atlas_ai_generations',
       resource_type: 'image',
     });
 

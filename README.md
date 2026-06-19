@@ -70,7 +70,7 @@ npm install
 ```
 
 ### 2. Configure Environment Variables
-Create a `.env` in `backend/` and a `.env.local` in `frontend/`. Use the template structures described in [QUICK_START.md](file:///c:/Users/HP/Desktop/Axiora/QUICK_START.md).
+Create a `.env` in `backend/` and a `.env.local` in `frontend/`. Use the template structures described in [QUICK_START.md](file:///c:/Users/HP/Desktop/Atlas/QUICK_START.md).
 
 ### 3. Run Locally
 ```bash
@@ -87,9 +87,9 @@ npm run dev
 
 ## 📝 Document Directory
 
-* **Setup Guide:** [QUICK_START.md](file:///c:/Users/HP/Desktop/Axiora/QUICK_START.md)
-* **OAuth Integrations:** [OAUTH_SETUP.md](file:///c:/Users/HP/Desktop/Axiora/OAUTH_SETUP.md)
-* **System Design Specs:** [SystemDesign.md](file:///c:/Users/HP/Desktop/Axiora/SystemDesign.md)
+* **Setup Guide:** [QUICK_START.md](file:///c:/Users/HP/Desktop/Atlas/QUICK_START.md)
+* **OAuth Integrations:** [OAUTH_SETUP.md](file:///c:/Users/HP/Desktop/Atlas/OAUTH_SETUP.md)
+* **System Design Specs:** [SystemDesign.md](file:///c:/Users/HP/Desktop/Atlas/SystemDesign.md)
 
 ---
 

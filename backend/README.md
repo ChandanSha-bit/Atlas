@@ -50,7 +50,7 @@ Welcome to the Atlas API. This is a secure, RESTful backend built with Node.js, 
 ```json
 {
   "name": "Alex Atlas",
-  "email": "alex@atlas.ai",
+  "email": "alex@Atlas.ai",
   "password": "password123"
 }
 ```

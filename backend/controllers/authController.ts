@@ -34,8 +34,8 @@ export const registerUser = async (req: Request, res: Response) => {
       try {
         await sendEmail({
           email: user.email,
-          subject: 'Axiora — Verify Your Email',
-          message: `Welcome to Axiora! Please verify your email by clicking: ${verifyUrl}`,
+          subject: 'Atlas — Verify Your Email',
+          message: `Welcome to Atlas! Please verify your email by clicking: ${verifyUrl}`,
           html: `
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
               <div style="text-align: center; padding: 40px 0 20px;">
@@ -45,16 +45,16 @@ export const registerUser = async (req: Request, res: Response) => {
                 <h1 style="color: #1b1c1a; font-size: 24px; margin: 0;">Verify Your Email</h1>
               </div>
               <p style="color: #555; font-size: 15px; line-height: 1.6; text-align: center; padding: 0 20px;">
-                Welcome to Axiora, <strong>${user.name}</strong>! Click the button below to verify your email address and activate your account.
+                Welcome to Atlas, <strong>${user.name}</strong>! Click the button below to verify your email address and activate your account.
               </p>
               <div style="text-align: center; padding: 24px 0;">
                 <a href="${verifyUrl}" style="display: inline-block; padding: 14px 36px; background-color: #1b1c1a; color: white; text-decoration: none; border-radius: 12px; font-size: 15px; font-weight: bold;">Verify Email</a>
               </div>
               <p style="color: #999; font-size: 13px; text-align: center;">
-                This link expires in 24 hours. If you didn't create an Axiora account, please ignore this email.
+                This link expires in 24 hours. If you didn't create an Atlas account, please ignore this email.
               </p>
               <hr style="border: none; border-top: 1px solid #eee; margin: 30px 0;">
-              <p style="color: #999; font-size: 12px; text-align: center;">Axiora AI — Your Creative Partner</p>
+              <p style="color: #999; font-size: 12px; text-align: center;">Atlas AI — Your Creative Partner</p>
             </div>
           `
         });
@@ -185,7 +185,7 @@ export const resendVerification = async (req: Request, res: Response) => {
 
     await sendEmail({
       email: user.email,
-      subject: 'Axiora — Verify Your Email',
+      subject: 'Atlas — Verify Your Email',
       message: `Please verify your email by clicking: ${verifyUrl}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -205,7 +205,7 @@ export const resendVerification = async (req: Request, res: Response) => {
             This link expires in 24 hours.
           </p>
           <hr style="border: none; border-top: 1px solid #eee; margin: 30px 0;">
-          <p style="color: #999; font-size: 12px; text-align: center;">Axiora AI — Your Creative Partner</p>
+          <p style="color: #999; font-size: 12px; text-align: center;">Atlas AI — Your Creative Partner</p>
         </div>
       `
     });
@@ -239,18 +239,18 @@ export const forgotPassword = async (req: Request, res: Response) => {
     try {
       await sendEmail({
         email: user.email,
-        subject: 'Axiora Password Reset Request',
+        subject: 'Atlas Password Reset Request',
         message: `You are receiving this email because you (or someone else) has requested the reset of a password. Please click the link below to reset your password:\n\n${resetUrl}\n\nThis link will expire in 10 minutes.`,
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
             <h1 style="color: #1b1c1a;">Password Reset Request</h1>
-            <p>You are receiving this email because you (or someone else) has requested to reset your Axiora account password.</p>
+            <p>You are receiving this email because you (or someone else) has requested to reset your Atlas account password.</p>
             <p>Please click the button below to reset your password:</p>
             <a href="${resetUrl}" style="display: inline-block; padding: 12px 24px; background-color: #1b1c1a; color: white; text-decoration: none; border-radius: 8px; margin: 20px 0;">Reset Password</a>
             <p style="color: #666; font-size: 14px;">This link will expire in 10 minutes.</p>
             <p style="color: #666; font-size: 14px;">If you did not request this, please ignore this email and your password will remain unchanged.</p>
             <hr style="border: none; border-top: 1px solid #eee; margin: 30px 0;">
-            <p style="color: #999; font-size: 12px;">Axiora AI - Your Creative Partner</p>
+            <p style="color: #999; font-size: 12px;">Atlas AI - Your Creative Partner</p>
           </div>
         `
       });

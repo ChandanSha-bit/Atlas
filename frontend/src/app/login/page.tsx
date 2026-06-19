@@ -91,11 +91,11 @@ export default function Login() {
         <div className="bg-background/60 backdrop-blur-[20px] border border-border/20 rounded-xl p-8 shadow-[0_10px_40px_-10px_rgba(27,48,34,0.08)]">
           <Link href="/" className="inline-flex items-center gap-1 text-[11px] text-on-surface-variant/50 hover:text-foreground transition-colors mb-6 font-medium">
             <span className="material-symbols-outlined text-[16px]">arrow_back</span>
-            Back to Axiora
+            Back to Atlas
           </Link>
           <h1 className="font-headline-md text-headline-md text-primary text-center mb-3">Login</h1>
           <p className="font-body-md text-body-md text-on-surface-variant text-center mb-8 px-2">
-            Access the Axiora Terminal.
+            Access the Atlas Terminal.
           </p>
 
           {/* OAuth Section - MOVED TO TOP */}

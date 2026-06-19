@@ -50,16 +50,16 @@ export default function SettingsPage() {
     setProfileName(user.name || "");
     setProfileEmail(user.email || "");
     setProfileBio(user.bio || "");
-    const savedTheme = localStorage.getItem("Axiora-theme") as "light" | "dark" | "system" | null;
+    const savedTheme = localStorage.getItem("Atlas-theme") as "light" | "dark" | "system" | null;
     if (savedTheme) setSelectedTheme(savedTheme);
-    const savedNotifs = localStorage.getItem("Axiora-notifications");
+    const savedNotifs = localStorage.getItem("Atlas-notifications");
     if (savedNotifs) try { setNotifications(JSON.parse(savedNotifs)); } catch { /* use defaults */ }
   }, [authReady, user, router]);
 
   useEffect(() => { applyTheme(selectedTheme); }, [selectedTheme]);
 
   const applyTheme = (theme: "light" | "dark" | "system") => {
-    localStorage.setItem("Axiora-theme", theme);
+    localStorage.setItem("Atlas-theme", theme);
     const root = document.documentElement;
     if (theme === "dark") root.classList.add("dark");
     else if (theme === "light") root.classList.remove("dark");
@@ -129,14 +129,14 @@ export default function SettingsPage() {
   const toggleNotif = (key: string) => {
     setNotifications((prev) => {
       const updated = { ...prev, [key]: !prev[key as keyof typeof prev] };
-      localStorage.setItem("Axiora-notifications", JSON.stringify(updated));
+      localStorage.setItem("Atlas-notifications", JSON.stringify(updated));
       return updated;
     });
   };
 
   const handleNotifSave = () => {
     setNotifSaving(true);
-    localStorage.setItem("Axiora-notifications", JSON.stringify(notifications));
+    localStorage.setItem("Atlas-notifications", JSON.stringify(notifications));
     setTimeout(() => { setNotifSaving(false); toast.success("Preferences saved"); }, 600);
   };
 
@@ -171,7 +171,7 @@ export default function SettingsPage() {
           </Link>
           <div>
             <h1 className="text-xl font-bold tracking-tight text-foreground">Settings</h1>
-            <p className="text-[11px] text-foreground/40 font-medium">Manage your Axiora experience</p>
+            <p className="text-[11px] text-foreground/40 font-medium">Manage your Atlas experience</p>
           </div>
         </div>
 
@@ -319,7 +319,7 @@ export default function SettingsPage() {
                       </div>
                       <div>
                         <h2 className="text-lg font-bold tracking-tight">Appearance</h2>
-                        <p className="text-[12px] text-foreground/40 font-medium">Customize how Axiora looks for you</p>
+                        <p className="text-[12px] text-foreground/40 font-medium">Customize how Atlas looks for you</p>
                       </div>
                     </div>
 
@@ -554,7 +554,7 @@ export default function SettingsPage() {
                       </div>
                       <div>
                         <h2 className="text-lg font-bold tracking-tight">Notifications</h2>
-                        <p className="text-[12px] text-foreground/40 font-medium">Control how Axiora reaches you</p>
+                        <p className="text-[12px] text-foreground/40 font-medium">Control how Atlas reaches you</p>
                       </div>
                     </div>
 
@@ -575,7 +575,7 @@ export default function SettingsPage() {
                         {[
                           { key: "pushChat", label: "Chat responses", desc: "When AI finishes generating" },
                           { key: "pushEnergy", label: "Energy warnings", desc: "When energy drops below 20%" },
-                          { key: "pushNewFeatures", label: "Feature announcements", desc: "New Axiora capabilities" },
+                          { key: "pushNewFeatures", label: "Feature announcements", desc: "New Atlas capabilities" },
                         ].map((item) => (
                           <Toggle key={item.key} checked={notifications[item.key as keyof typeof notifications]} onChange={() => toggleNotif(item.key)} label={item.label} desc={item.desc} />
                         ))}

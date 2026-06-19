@@ -16,7 +16,7 @@ export default function CheckEmail() {
           quality={100}
           unoptimized
         />
-        {/* Overlay to ensure text readability and maintain Axiora aesthetic */}
+        {/* Overlay to ensure text readability and maintain Atlas aesthetic */}
         <div className="absolute inset-0 bg-tertiary-fixed/30 mix-blend-multiply"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent"></div>
       </div>
@@ -25,7 +25,7 @@ export default function CheckEmail() {
       <main className="relative z-10 w-full max-w-md">
         {/* Brand Logo Header */}
         <div className="text-center mb-8">
-          <h1 className="font-headline-sm text-headline-sm text-primary">Axiora</h1>
+          <h1 className="font-headline-sm text-headline-sm text-primary">Atlas</h1>
         </div>
         
         <div className="bg-background/60 backdrop-blur-[20px] rounded-[1.5rem] border border-border/40 shadow-[0_30px_60px_rgba(27,48,34,0.08)] p-8 md:p-10 flex flex-col items-center text-center">

@@ -97,7 +97,7 @@ export default function Home() {
             >
               <span className="material-symbols-outlined text-background text-lg md:text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>eco</span>
             </motion.div>
-            <span className="text-lg md:text-xl text-foreground tracking-tighter font-semibold">Axiora</span>
+            <span className="text-lg md:text-xl text-foreground tracking-tighter font-semibold">Atlas</span>
           </Link>
 
           <div className="hidden lg:flex items-center gap-10">
@@ -140,7 +140,7 @@ export default function Home() {
       <main className="flex-grow pt-40 md:pt-32 pb-24 flex flex-col items-center justify-center relative min-h-screen overflow-hidden">
         <div className="absolute inset-0 z-[-1]">
           <Image
-            alt="Axiora Aesthetic Background"
+            alt="Atlas Aesthetic Background"
             className="w-full h-full object-cover object-center scale-110 opacity-80"
             src="/bg-landscape.png?v=2"
             fill
@@ -176,7 +176,7 @@ export default function Home() {
           </div>
 
           <p className="text-base md:text-xl text-foreground/60 max-w-2xl mx-auto mb-10 md:mb-12 text-balance font-light leading-relaxed px-4">
-            Axiora is a refined creative partner, bridging the gap between human intuition and unyielding neural performance.
+            Atlas is a refined creative partner, bridging the gap between human intuition and unyielding neural performance.
           </p>
 
           <motion.div
@@ -236,7 +236,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl md:text-4xl font-medium text-foreground mb-4 md:mb-6 tracking-tight">Neural Narrative Engine</h3>
                 <p className="text-foreground/50 max-w-md leading-relaxed text-base md:text-lg font-light">
-                  Dialogue that evolves. Axiora adapts to your unique creative DNA, remembering context and intent across every interaction.
+                  Dialogue that evolves. Atlas adapts to your unique creative DNA, remembering context and intent across every interaction.
                 </p>
               </div>
               
@@ -408,7 +408,7 @@ export default function Home() {
           <div className="col-span-2">
             <div className="flex items-center gap-3 mb-8">
               <span className="material-symbols-outlined text-foreground text-3xl">eco</span>
-              <span className="text-2xl tracking-tighter font-semibold text-foreground">Axiora.</span>
+              <span className="text-2xl tracking-tighter font-semibold text-foreground">Atlas.</span>
             </div>
             <p className="text-sm text-foreground/40 max-w-xs leading-relaxed font-light uppercase tracking-widest">
               Synthesizing the future of human-AI collaboration.
@@ -423,8 +423,8 @@ export default function Home() {
 
           <div className="flex flex-col gap-6">
             <h4 className="text-[9px] uppercase tracking-[0.3em] font-bold text-foreground">Connect</h4>
-            <Link href="#" className="text-sm text-foreground/50 hover:text-foreground transition-colors font-light italic font-serif">@Axiora_intelligence</Link>
-            <p className="text-[9px] text-foreground/20 uppercase tracking-widest pt-4">© 2026 Axiora v2.0</p>
+            <Link href="#" className="text-sm text-foreground/50 hover:text-foreground transition-colors font-light italic font-serif">@Atlas_intelligence</Link>
+            <p className="text-[9px] text-foreground/20 uppercase tracking-widest pt-4">© 2026 Atlas v2.0</p>
           </div>
         </div>
       </footer>
