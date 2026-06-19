@@ -5,7 +5,10 @@ import User from '../models/User';
 import Chat from '../models/Chat';
 
 let _openai: OpenAI | null = null;
-function getClient(): OpenAI {
+function getClient(): OpenAI | null {
+  if (!process.env.OPENAI_API_KEY) {
+    return null;
+  }
   if (!_openai) {
     _openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
   }
@@ -14,6 +17,14 @@ function getClient(): OpenAI {
 
 export const generateImage = async (req: Request, res: Response) => {
   try {
+    const client = getClient();
+    if (!client) {
+      return res.status(503).json({
+        success: false,
+        message: 'Image generation is coming soon! This feature is not yet available.',
+      });
+    }
+
     const { prompt, size = '1024x1024', quality = 'standard' } = req.body;
 
     if (!prompt) {
@@ -30,7 +41,7 @@ export const generateImage = async (req: Request, res: Response) => {
       });
     }
 
-    const response = await getClient().images.generate({
+    const response = await client.images.generate({
       model: "dall-e-3",
       prompt: prompt,
       n: 1,
@@ -38,7 +49,7 @@ export const generateImage = async (req: Request, res: Response) => {
       quality: quality as 'standard' | 'hd',
     }).catch(async (err: any) => {
       if (err.status === 400 && err.message?.includes("does not exist")) {
-        const fallback = await getClient().images.generate({
+        const fallback = await client.images.generate({
           model: "dall-e-2",
           prompt: prompt,
           n: 1,
