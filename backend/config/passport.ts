@@ -22,7 +22,7 @@ if (process.env.GOOGLE_CLIENT_ID) {
       {
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-        callbackURL: `${process.env.BACKEND_URL || 'http://localhost:5000'}/api/auth/google/callback`,
+        callbackURL: `${(process.env.BACKEND_URL || 'http://localhost:5000').trim().replace(/\/+$/, '')}/api/auth/google/callback`,
         proxy: true,
         scope: ['profile', 'email'],
       },
@@ -83,7 +83,7 @@ if (process.env.GITHUB_CLIENT_ID) {
       {
         clientID: process.env.GITHUB_CLIENT_ID,
         clientSecret: process.env.GITHUB_CLIENT_SECRET!,
-        callbackURL: `${process.env.BACKEND_URL || 'http://localhost:5000'}/api/auth/github/callback`,
+        callbackURL: `${(process.env.BACKEND_URL || 'http://localhost:5000').trim().replace(/\/+$/, '')}/api/auth/github/callback`,
         scope: ['user:email'],
       },
       async (_accessToken: string, _refreshToken: string, profile: any, done: (error: any, user?: any) => void) => {
