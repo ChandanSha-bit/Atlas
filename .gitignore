@@ -3,7 +3,7 @@
 **/jspm_packages
 
 # Next.js
-**/ .next/
+**/.next/
 **/out/
 
 # Production
@@ -32,3 +32,12 @@ yarn-error.log*
 # OS metadata
 .DS_Store
 Thumbs.db
+
+# Documentation files (exclude from git)
+DEPLOYMENT.md
+QUICK_DEPLOY.md
+DEPLOYMENT_CHECKLIST.md
+
+# Test files
+**/test-groq.js
+**/diagnostic.js
