@@ -53,7 +53,7 @@ export const uploadAvatar = async (req: Request, res: Response) => {
     }
 
     const uploadResponse = await cloudinary.uploader.upload(req.file.path, {
-      folder: 'atlas_avatars',
+      folder: 'Axiora_avatars',
       resource_type: 'image',
       transformation: [
         { width: 400, height: 400, crop: 'fill' },

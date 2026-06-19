@@ -42,7 +42,7 @@ export default function NotFound() {
       >
         <Image 
           alt="The Horizon Seeker" 
-          src="/atlas_404_telescope_1778856637413.png"
+          src="/Axiora_404_telescope_1778856637413.png"
           fill
           className="object-cover opacity-70 grayscale-[30%]"
           priority
@@ -99,11 +99,11 @@ export default function NotFound() {
       </div>
 
       <div className="absolute top-12 right-12 hidden lg:flex items-center gap-4 opacity-10">
-        <span className="text-[9px] uppercase tracking-[0.4em] font-bold text-white tracking-tighter">Atlas Intelligence System v2.0</span>
+        <span className="text-[9px] uppercase tracking-[0.4em] font-bold text-white tracking-tighter">Axiora Intelligence System v2.0</span>
       </div>
 
       {/* NOISE OVERLAY FOR TEXTURE */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.04] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+      <div className="absolute inset-0 pointer-events-none opacity-[0.04] bg-[url('/noise.svg')]" />
     </div>
   );
 }

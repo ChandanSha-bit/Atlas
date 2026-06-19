@@ -39,7 +39,7 @@ export const useAuthStore = create<AuthState>()(
         })),
     }),
     {
-      name: "atlas-auth-storage",
+      name: "Axiora-auth-storage",
     }
   )
 );

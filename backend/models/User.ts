@@ -49,7 +49,7 @@ const UserSchema = new Schema<IUserDocument>({
   bio: {
     type: String,
     maxlength: [200, 'Bio cannot be more than 200 characters'],
-    default: 'I am using Atlas AI.',
+    default: 'I am using Axiora AI.',
   },
   avatarUrl: {
     type: String,

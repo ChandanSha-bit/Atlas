@@ -53,7 +53,7 @@ export default function GalleryPage() {
       const blob = await res.blob();
       const a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
-      a.download = `atlas-${prompt.slice(0, 20).replace(/\s+/g, "-")}.png`;
+      a.download = `Axiora-${prompt.slice(0, 20).replace(/\s+/g, "-")}.png`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);

@@ -14,8 +14,8 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  title: "Atlas - Find Your Inner Peace",
-  description: "Reconnect with nature and find inner calm with Atlas.",
+  title: "Axiora - AI-Driven SaaS Platform",
+  description: "Axiora is a refined creative partner, bridging the gap between human intuition and unyielding neural performance.",
 };
 
 export default function RootLayout({
@@ -31,7 +31,7 @@ export default function RootLayout({
           rel="stylesheet" 
         />
         <script dangerouslySetInnerHTML={{
-          __html: `(function(){try{var t=localStorage.getItem("atlas-theme");var d=t==="dark";if(t==="system"){d=window.matchMedia("(prefers-color-scheme: dark)").matches}if(d)document.documentElement.classList.add("dark")}catch(e){}})();`
+          __html: `(function(){try{var t=localStorage.getItem("Axiora-theme");var d=t==="dark";if(t==="system"){d=window.matchMedia("(prefers-color-scheme: dark)").matches}if(d)document.documentElement.classList.add("dark")}catch(e){}})();`
         }} />
       </head>
       <body className={`${manrope.variable} ${newsreader.variable} bg-background text-on-surface antialiased font-body-md overflow-x-hidden selection:bg-primary-fixed selection:text-on-primary-fixed min-h-screen flex flex-col relative`}>

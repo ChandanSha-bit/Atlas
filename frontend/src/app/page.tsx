@@ -97,7 +97,7 @@ export default function Home() {
             >
               <span className="material-symbols-outlined text-background text-lg md:text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>eco</span>
             </motion.div>
-            <span className="text-lg md:text-xl text-foreground tracking-tighter font-semibold">Atlas</span>
+            <span className="text-lg md:text-xl text-foreground tracking-tighter font-semibold">Axiora</span>
           </Link>
 
           <div className="hidden lg:flex items-center gap-10">
@@ -140,7 +140,7 @@ export default function Home() {
       <main className="flex-grow pt-40 md:pt-32 pb-24 flex flex-col items-center justify-center relative min-h-screen overflow-hidden">
         <div className="absolute inset-0 z-[-1]">
           <Image
-            alt="Atlas Aesthetic Background"
+            alt="Axiora Aesthetic Background"
             className="w-full h-full object-cover object-center scale-110 opacity-80"
             src="/bg-landscape.png?v=2"
             fill
@@ -176,7 +176,7 @@ export default function Home() {
           </div>
 
           <p className="text-base md:text-xl text-foreground/60 max-w-2xl mx-auto mb-10 md:mb-12 text-balance font-light leading-relaxed px-4">
-            Atlas is a refined creative partner, bridging the gap between human intuition and unyielding neural performance.
+            Axiora is a refined creative partner, bridging the gap between human intuition and unyielding neural performance.
           </p>
 
           <motion.div
@@ -236,13 +236,13 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl md:text-4xl font-medium text-foreground mb-4 md:mb-6 tracking-tight">Neural Narrative Engine</h3>
                 <p className="text-foreground/50 max-w-md leading-relaxed text-base md:text-lg font-light">
-                  Dialogue that evolves. Atlas adapts to your unique creative DNA, remembering context and intent across every interaction.
+                  Dialogue that evolves. Axiora adapts to your unique creative DNA, remembering context and intent across every interaction.
                 </p>
               </div>
               
               {/* INTERACTIVE MAGNETIC BARS */}
               <div className="mt-12 h-[180px] md:h-[250px] w-full bg-gradient-to-br from-foreground/[0.02] to-transparent rounded-[24px] md:rounded-[32px] border border-border/5 flex items-center justify-center relative overflow-hidden">
-                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.05] pointer-events-none" />
+                 <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-[0.05] pointer-events-none" />
                  <div className="flex gap-2 md:gap-4 relative z-10 items-end h-32 pointer-events-none">
                   {[...Array(9)].map((_, i) => {
                     const barPos = i / 8;
@@ -260,7 +260,7 @@ export default function Home() {
               whileHover={{ y: -8 }}
               className="md:col-span-4 bg-foreground rounded-[32px] md:rounded-[40px] p-8 md:p-12 flex flex-col justify-between group overflow-hidden relative text-background shadow-sm hover:shadow-2xl transition-all duration-700"
             >
-              <div className="absolute inset-0 opacity-30 pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+              <div className="absolute inset-0 opacity-30 pointer-events-none bg-[url('/noise.svg')]" />
               <div className="relative z-10">
                 <div className="w-12 h-12 md:w-14 md:h-14 bg-background/10 backdrop-blur-xl border border-border/10 rounded-xl md:rounded-2xl flex items-center justify-center mb-8 md:mb-10">
                   <span className="material-symbols-outlined text-background text-xl md:text-2xl">auto_awesome</span>
@@ -408,7 +408,7 @@ export default function Home() {
           <div className="col-span-2">
             <div className="flex items-center gap-3 mb-8">
               <span className="material-symbols-outlined text-foreground text-3xl">eco</span>
-              <span className="text-2xl tracking-tighter font-semibold text-foreground">Atlas.</span>
+              <span className="text-2xl tracking-tighter font-semibold text-foreground">Axiora.</span>
             </div>
             <p className="text-sm text-foreground/40 max-w-xs leading-relaxed font-light uppercase tracking-widest">
               Synthesizing the future of human-AI collaboration.
@@ -423,8 +423,8 @@ export default function Home() {
 
           <div className="flex flex-col gap-6">
             <h4 className="text-[9px] uppercase tracking-[0.3em] font-bold text-foreground">Connect</h4>
-            <Link href="#" className="text-sm text-foreground/50 hover:text-foreground transition-colors font-light italic font-serif">@atlas_intelligence</Link>
-            <p className="text-[9px] text-foreground/20 uppercase tracking-widest pt-4">© 2026 Atlas v2.0</p>
+            <Link href="#" className="text-sm text-foreground/50 hover:text-foreground transition-colors font-light italic font-serif">@Axiora_intelligence</Link>
+            <p className="text-[9px] text-foreground/20 uppercase tracking-widest pt-4">© 2026 Axiora v2.0</p>
           </div>
         </div>
       </footer>

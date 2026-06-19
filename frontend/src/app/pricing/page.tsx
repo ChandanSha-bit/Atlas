@@ -38,7 +38,7 @@ export default function PricingPage() {
         
         <header className="text-center mb-16">
           <h1 className="font-headline-lg text-headline-lg text-foreground mb-4">Choose Your Journey</h1>
-          <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Unlock the full potential of Atlas with our flexible subscription plans designed for every stage of creativity.</p>
+          <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Unlock the full potential of Axiora with our flexible subscription plans designed for every stage of creativity.</p>
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

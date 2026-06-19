@@ -4,9 +4,9 @@ const options: swaggerJsdoc.Options = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'Atlas AI API',
+      title: 'Axiora AI API',
       version: '1.0.0',
-      description: 'Backend API for the Atlas AI creative partner application.',
+      description: 'Backend API for the Axiora AI creative partner application.',
     },
     servers: [
       { url: process.env.BACKEND_URL || 'http://localhost:5000', description: 'Development server' },

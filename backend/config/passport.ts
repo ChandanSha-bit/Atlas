@@ -58,11 +58,11 @@ if (process.env.GOOGLE_CLIENT_ID) {
           }
 
           user = await User.create({
-            name: profile.displayName || 'Atlas User',
+            name: profile.displayName || 'Axiora User',
             email,
             password: Math.random().toString(36).slice(-16) + Math.random().toString(36).slice(-8),
             avatarUrl: profile.photos && profile.photos[0] ? profile.photos[0].value : '',
-            bio: 'Joined Atlas via Google',
+            bio: 'Joined Axiora via Google',
             provider: 'google',
             providerId: profile.id,
             linkedAccounts: [{ provider: 'google', providerId: profile.id, linkedAt: new Date() }],
@@ -91,7 +91,7 @@ if (process.env.GITHUB_CLIENT_ID) {
           let email = profile.emails && profile.emails[0] ? profile.emails[0].value : null;
 
           if (!email) {
-            email = `${profile.username}@github.atlas.ai`;
+            email = `${profile.username}@github.Axiora.ai`;
           }
 
           let user = await User.findOne({ 'linkedAccounts.providerId': profile.id });
@@ -118,11 +118,11 @@ if (process.env.GITHUB_CLIENT_ID) {
           }
 
           user = await User.create({
-            name: profile.displayName || profile.username || 'Atlas User',
+            name: profile.displayName || profile.username || 'Axiora User',
             email,
             password: Math.random().toString(36).slice(-16) + Math.random().toString(36).slice(-8),
             avatarUrl: profile.photos && profile.photos[0] ? profile.photos[0].value : '',
-            bio: 'Joined Atlas via GitHub',
+            bio: 'Joined Axiora via GitHub',
             provider: 'github',
             providerId: profile.id,
             linkedAccounts: [{ provider: 'github', providerId: profile.id, linkedAt: new Date() }],

@@ -18,7 +18,7 @@ export default function PrivacyPage() {
           <section className="mb-10">
             <h2 className="font-headline-sm text-[24px] text-foreground mb-4 mt-0">1. Data Collection</h2>
             <p className="font-body-md text-[16px] text-on-surface-variant leading-relaxed">
-              At Atlas, we believe your data is your own. We collect minimal personal information necessary to provide you with our services. This includes your email address for authentication and the content of your conversations to provide contextual, highly personalized AI responses.
+              At Axiora, we believe your data is your own. We collect minimal personal information necessary to provide you with our services. This includes your email address for authentication and the content of your conversations to provide contextual, highly personalized AI responses.
             </p>
           </section>
 
@@ -45,7 +45,7 @@ export default function PrivacyPage() {
 
           <div className="mt-12 pt-8 border-t border-outline-variant/30">
             <p className="font-body-md text-[15px] text-on-surface-variant italic">
-              If you have any questions about this Privacy Policy, please contact our Data Protection Officer at privacy@atlas.ai.
+              If you have any questions about this Privacy Policy, please contact our Data Protection Officer at privacy@Axiora.ai.
             </p>
           </div>
         </div>

@@ -77,7 +77,7 @@ function NewPasswordContent() {
           quality={100}
           unoptimized
         />
-        {/* Overlay to ensure text readability and maintain Atlas aesthetic */}
+        {/* Overlay to ensure text readability and maintain Axiora aesthetic */}
         <div className="absolute inset-0 bg-tertiary-fixed/30 mix-blend-multiply"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent"></div>
       </div>
@@ -86,7 +86,7 @@ function NewPasswordContent() {
       <main className="relative z-10 w-full max-w-md px-margin-mobile md:px-0">
         {/* Brand / Logo Area */}
         <div className="text-center mb-8">
-          <div className="font-headline-sm text-headline-sm text-primary font-medium tracking-tight">Atlas</div>
+          <div className="font-headline-sm text-headline-sm text-primary font-medium tracking-tight">Axiora</div>
         </div>
         
         <div className="bg-background/60 backdrop-blur-[20px] border border-border/20 rounded-xl p-8 shadow-[0_10px_40px_-10px_rgba(27,48,34,0.08)] text-center">
