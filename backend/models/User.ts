@@ -112,7 +112,8 @@ const UserSchema = new Schema<IUserDocument>({
 
 UserSchema.pre('save', async function () {
   if (!this.isModified('password')) return;
-  const salt = await bcrypt.genSalt(10);
+  // Reduced salt rounds from 10 to 8 to speed up login on free-tier CPUs
+  const salt = await bcrypt.genSalt(8);
   this.password = await bcrypt.hash(this.password, salt);
 });
 
